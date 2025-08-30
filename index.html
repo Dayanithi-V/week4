@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplication Table Generator</title>
 </head>
 <body>
-    <h1>grade calculator</h1>
+  <h3>Multiplication Table Generator</h3>
 
-    <label id="marksLabel"></label>
-    <input id="marks">
-    <button id="getGradeButton"></button>
+  <label for="number">Enter a number:</label>
+  <input id="number" type="number" placeholder="Enter a number">
 
-    <p id="gradeResult">a the marks should be between 0-100. enter any marks to get the grades.</p>
+  <label for="start">Start Value:</label>
+  <input id="start" type="number" placeholder="Start of range">
 
-    <script>
-        document.getElementById('getGradeButton').addEventListener('click', ()=>{
-            const marks = document.getElementById('marks').value;
+  <label for="end">End Value:</label>
+  <input id="end" type="number" placeholder="End of range">
 
-            if(!marks){
-                document.getElementById('gradeResult').innerText = "enter any marks to get the grades."
-            }
+  <button id="generateBtn" type="button" style="background-color: rgb(77, 176, 80);">Generate</button>
 
-        })
-    </script>
+  <span id="errormessage"></span>
+  <div id="table">
+    <p>3</p>
+    <p>6</p>
+    <p>9</p>
+  </div>
+
+  <script>
+    document.getElementById('generateBtn').addEventListener('click', ()=>{
+      const number = document.getElementById('number').value;
+      const start = document.getElementById('start').value;
+      const end = document.getElementById('end').value;
+
+      console.log(number, start, end);
+
+      if (!number || !start || !end){
+        document.getElementById('errormessage').innerText = "All fields are required!"
+      }
+
+      else{
+
+      }
+
+    })
+  </script>  
 </body>
 </html>
