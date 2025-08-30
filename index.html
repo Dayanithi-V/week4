@@ -4,37 +4,47 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Habit Tracker</title>
+  <title>Multiplication Table Generator</title>
 </head>
 <body>
-  <h1>Habit Tracker</h1>
+  <h3>Multiplication Table Generator</h3>
 
-  <input id ="chkWater" type="checkbox">
-  <label for="chkWater">Drink Water</label>
+  <label for="number">Enter a number:</label>
+  <input id="number" type="number" placeholder="Enter a number">
 
-  <input id ="chkExercise" type="checkbox">
-  <label for="chkExercise">Exercise</label>
+  <label for="start">Start Value:</label>
+  <input id="start" type="number" placeholder="Start of range">
 
-  <input id ="chkReading" type="checkbox">
-  <label for="chkReading">Read a Book</label>
+  <label for="end">End Value:</label>
+  <input id="end" type="number" placeholder="End of range">
 
-  <button id="mark-progress" style="background-color: rgb(41, 168, 71);">Mark Progress</button>
-  <button id="reset-progress" onclick="clear_checkbox()">Reset</button>
+  <button id="generateBtn" type="button" style="background-color: rgb(77, 176, 80);">Generate</button>
 
-  <p id="summary">You have completed 0 habits today.</p>
+  <span id="errormessage"></span>
+  <div id="table">
+    <p>3</p>
+    <p>6</p>
+    <p>9</p>
+  </div>
 
   <script>
-    document.getElementById('mark-progress').addEventListener('click', () => {
-      document.getElementById('summary').innerText = "You have completed 2 habits today.";
-    });
+    document.getElementById('generateBtn').addEventListener('click', ()=>{
+      const number = document.getElementById('number').value;
+      const start = document.getElementById('start').value;
+      const end = document.getElementById('end').value;
 
-    function clear_checkbox(){
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-      checkboxes.forEach(checkbox => {
-        checkbox.checked = false;
-      });
-    }
-  </script>
-  
+      console.log(number, start, end);
+
+      if (!number || !start || !end){
+        document.getElementById('errormessage').innerText = "All fields are required!"
+      }
+
+      else{
+
+      }
+
+    })
+  </script>  
 </body>
 </html>
+
